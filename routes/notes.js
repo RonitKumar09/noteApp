@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
             });
         })
         .catch(err => {
-            console.log("err:", err);
+            req.flash('error_msg', 'ERROR: '+ err);
             res.redirect('/');
         })
 });

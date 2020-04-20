@@ -29,6 +29,10 @@
 >
 > ![list_of_notes](/demo_gifs/editing_a_note.gif)
 >
+> ### 3. Searching a note
+>
+> ![list_of_notes](/demo_gifs/searching_a_note.gif)
+>
 > ### 4. Deleting a note
 >
 > ![list_of_notes](/demo_gifs/deleting_a_note.gif)

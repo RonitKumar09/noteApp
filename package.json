@@ -19,5 +19,17 @@
   "description": "notes app using mongoose",
   "main": "app.js",
   "author": "Ronit",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonitKumar09/noteApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RonitKumar09/noteApp/issues"
+  },
+  "homepage": "https://github.com/RonitKumar09/noteApp#readme"
 }
