@@ -1,0 +1,170 @@
+<div class=" container justify-content-center">
+    <table id="dataTable" class="table row-border table-bordered table-condensed table-striped table-responsive display"
+        cellspacing="1">
+        <thead class="bg-info shadow text-white">
+            <tr>
+                <th class=" text-center col-sm-3">Title</th>
+                <th class="text-center col-sm-6">Note</th>
+                <th class="text-center col-sm-1">tags</th>
+                <th class="text-center col-sm-2">Operations</th>
+            </tr>
+        </thead>
+        <tbody class="text-dark">
+            <% notes.forEach((note)=>{ %>
+            <tr>
+                <td class="col-sm-3">
+                    <h3><%= note.title %></h3>
+                </td>
+                <td class="text-center col-sm-6">
+                    <div id="demo" class="comment more">
+                        <%= note.note %>
+                    </div>
+                </td>
+                <td class="col-sm-1">
+                    <% for(let tag of note.tags){%>
+                    <kbd><%= tag %> <form class=" btns text-danger" action="/tag_delete/<%= note.id %>" method="POST">
+                            <input type="hidden" value="<%= tag %>" name="tag" /><button type="submit"
+                                class="crss"><span class="glyphicon glyphicon-remove"></span></button></form></kbd>
+                    <% } %>
+                </td>
+                <td class="text-center col-sm-2">
+                    <a class="btns" href="/edit/<%= note.id %>">
+                        <button class="btn btn-primary btn-sm m-1 a-btn-slide-text">
+                            <span class="glyphicon glyphicon-edit"></span>
+                            <span>Edit</span>
+                        </button>
+                    </a>
+                    <form class="btns" action="/delete/<%= note.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            <span>Delete</span>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+
+            <!-- <tr>
+            <td>Cedric Kelly</td>
+            <td>Senior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Sonya Frost</td>
+            <td>Software Engineer</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Quinn Flynn</td>
+            <td>Support Lead</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Dai Rios</td>
+            <td>Personnel Lead</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Gavin Joyce</td>
+            <td>Developer</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Martena Mccray</td>
+            <td>Post-Sales support</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Jennifer Acosta</td>
+            <td>Junior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Shad Decker</td>
+            <td>Regional Director</td>
+            <td>Edinburgh</td>
+            <td>
+                <button class="btn btn-primary btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>Edit</span>
+                </button>
+                <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete</span>
+                </button>
+            </td>
+        </tr> -->
+        </tbody>
+    </table>
+</div>

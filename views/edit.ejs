@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') -%>
+<form action="/edit/<%= notes.id %>?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="align-middle mt-5 container justify-content-center">
+        <div class="form-group">
+            <label class="lg" for="emp_name"><b>Title</b></label>
+            <input name="title" class="form-control form-control-lg" value="<%= notes.title %>" type="text">
+        </div>
+        <div class="form-group">
+            <label for="emp_desg"><b>Tags</b></label>
+            <input name="tags" data-role="tagsinput" class="form-control form-control-lg" value="<%= notes.tags %>"
+                type="text">
+        </div>
+        <div class="form-group">
+            <label for="emp_sal"><b>Note</b></label>
+            <textarea name="note" class="form-control form-control-lg" value="hello"
+                row="10"><%= notes.note %></textarea>
+        </div>
+        <button class="btn btn-lg btn-info btn-block" type="submit">Edit Note</button>
+    </div>
+</form>
+
+<%- include('partials/footer.ejs') -%>

@@ -1,0 +1,44 @@
+#demo a {
+	color: #0254EB
+}
+
+#demo a:visited {
+	color: #0254EB
+}
+
+#demo a.morelink {
+	text-decoration: none;
+	outline: none;
+}
+
+.morecontent span {
+	display: none;
+}
+
+.comment {
+	width: 400px;
+	background-color: #f0f0f0;
+	margin: 10px;
+}
+
+kbd {
+	display: inline-block;
+	margin: 1px;
+}
+
+
+thead {
+	border-radius: 2px;
+}
+
+.btns {
+	display: inline-block;
+}
+
+.crss {
+	font-size: 100%;
+	font-family: inherit;
+	border: 0;
+	padding: 0;
+	background: none;
+}

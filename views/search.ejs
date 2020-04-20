@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs') -%>
+<div class="container jumbotron">
+    <div class="row justify-content-center">
+        <form action="/note" method="GET" class="form-inline">
+            <input name="noteTitle" class="form-control form-control-lg mr-sm-2" type="search"
+                placeholder="Search your Note" aria-label="Search">
+            <button class="btn btn-lg btn-outline-success my-5 my-sm-5" type="submit"><span
+                    class="glyphicon glyphicon-search"></span> Search</button>
+        </form>
+    </div>
+    <% if(!notes.length && flag){%>
+    <div class="row justify-content-center">
+        <h1 class="text-danger">no matching Note found</h1class=>
+    </div>
+    <%}%>
+</div>
+
+<% if(notes.length) { %>
+    <%- include('partials/table.ejs') -%>
+    <% } %>
+
+    <div class="container justify-content-center">
+        <!-- <table class="table table-hover table-dark">
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Note Title</td>
+                <td>details</td>
+                <td><kbd>tags</kbd></td>
+                <td>
+                    <button class="btn btn-primary btn-sm a-btn-slide-text">
+                        <span class="glyphicon glyphicon-edit"></span>
+                        <span>Edit</span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-danger btn-sm a-btn-slide-text">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        <span>Delete</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    </div>
+    <%- include('partials/footer.ejs') -%>

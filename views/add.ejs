@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') -%>
+<div class="align-middle mt-5 container justify-content-center">
+    <form action="/add" method="POST">
+        <div class="form-group">
+            <label class="lg" for="emp_name"><b>Title</b></label>
+            <input name="title" class="form-control form-control-lg" placeholder="Note Title" type="text" required>
+        </div>
+        <div class="form-group">
+            <label><b>Tags</b></label>
+            <input name="tags" data-content-theme="a" data-role="tagsinput" class="form-control form-control-lg" placeholder="Tags to Note"
+                type="text" required>
+        </div>
+        <div class="form-group">
+            <label><b>Note</b></label>
+            <textarea name="note" class="form-control form-control-lg" type="textarea"
+                placeholder="Your note goes here....." row="10" required></textarea>
+        </div>
+        <button class="btn btn-lg btn-info btn-block" type="submit">Add Note</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs') -%>
