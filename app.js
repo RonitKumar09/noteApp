@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
+const multer = require('multer');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const notesRoute = require('./routes/notes');
@@ -15,7 +16,7 @@ dotenv.config({
 });
 app.use(flash());
 app.use(session({
-    secret : "ronit",
+    secret : process.env.session_key,
     resave : true,
     saveUninitialized: true
 }));

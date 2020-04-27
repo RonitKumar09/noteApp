@@ -1,23 +1,49 @@
 <%- include('partials/header.ejs') -%>
-<form action="/edit/<%= notes.id %>?_method=PUT" method="POST">
+<form action="/edit/<%= notes.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <div class="align-middle mt-5 container justify-content-center">
         <div class="form-group">
-            <label class="lg" for="emp_name"><b>Title</b></label>
-            <input name="title" class="form-control form-control-lg" value="<%= notes.title %>" type="text">
+            <label for="title"><b>Title</b></label>
+            <input id="title" name="title" class="form-control form-control-lg" value="<%= notes.title %>" type="text">
         </div>
         <div class="form-group">
-            <label for="emp_desg"><b>Tags</b></label>
-            <input name="tags" data-role="tagsinput" class="form-control form-control-lg" value="<%= notes.tags %>"
-                type="text">
+            <label for="tags"><b>Tags</b></label>
+            <input id="tags" name="tags" data-role="tagsinput" class="form-control form-control-lg" placeholder="Tags to Note" value="<%= notes.tags %>" type="text">
         </div>
+
         <div class="form-group">
-            <label for="emp_sal"><b>Note</b></label>
-            <textarea name="note" class="form-control form-control-lg" value="hello"
-                row="10"><%= notes.note %></textarea>
+                     
+                <label for="img-button"><b>Images</b></label>
+                <input name="images" type="file" id="upload-img" hidden="hidden" multiple>
+                <button class="btn btn-sm btn-outline-success my-5 my-sm-5" type="button" id="img-button">Choose an Image</button>
+                <span id="img-text">No images selected</span>
+
         </div>
-        <button class="btn btn-lg btn-info btn-block" type="submit">Edit Note</button>
+
+        <div class="form-group">
+            <label for="notes"><b>Note</b></label>
+            <textarea id="notes" name="note" class="form-control form-control-lg" value="hello"
+                row="30"><%= notes.note %></textarea>
+        </div>
+        <button hidden id="edit" class="btn btn-lg btn-info btn-block" type="submit">Edit Note</button>
     </div>
 </form>
+
+<div class="align-middle mt-5 mb-3 container justify-content-center">
+    <div class="card-group">
+    <% for(let url of notes.imgUrl){%>
+        <form  action="/deleteimg/<%= notes.id %>" method="POST">
+            <input type="hidden" value="<%= url %>" name="url" />
+            <div class="card m-1" style="width: 6rem;">
+                <img class="card-img-top" src="<%= url %>" alt="Card image cap">
+                <div class="card-footer justify-content-center">
+                  <button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+              </div>
+        </form>
+        <% } %>
+    </div>
+        <button onclick="edit()" class="btn btn-lg btn-info btn-block mt-3" type="submit">Edit Note</button>
+</div>
 
 <%- include('partials/footer.ejs') -%>
