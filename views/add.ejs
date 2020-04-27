@@ -1,19 +1,24 @@
 <%- include('partials/header.ejs') -%>
 <div class="align-middle mt-5 container justify-content-center">
-    <form action="/add" method="POST">
+    <form action="/add" method="POST" enctype="multipart/form-data" >
         <div class="form-group">
-            <label class="lg" for="emp_name"><b>Title</b></label>
-            <input name="title" class="form-control form-control-lg" placeholder="Note Title" type="text" required>
+            <label class="lg" for="title"><b>Title</b></label>
+            <input id="title" name="title" class="form-control form-control-lg" placeholder="Note Title" type="text" required>
         </div>
         <div class="form-group">
-            <label><b>Tags</b></label>
-            <input name="tags" data-content-theme="a" data-role="tagsinput" class="form-control form-control-lg" placeholder="Tags to Note"
-                type="text" required>
+            <label for="tags"><b>Tags</b></label>
+            <input id="tags" name="tags" data-content-theme="a" data-role="tagsinput" class="form-control form-control-lg" placeholder="Tags to Note" type="text" required>
+        </div>
+        <div class="form-group">        
+                <label for="img-button"><b>Images</b></label>
+                <input name="images" type="file" id="upload-img" hidden="hidden" multiple>
+                <button class="btn btn-sm btn-outline-success my-5 my-sm-5" type="button" id="img-button">Choose an Image</button>
+                <span id="img-text">No images selected</span>
         </div>
         <div class="form-group">
-            <label><b>Note</b></label>
-            <textarea name="note" class="form-control form-control-lg" type="textarea"
-                placeholder="Your note goes here....." row="10" required></textarea>
+            <label for="notes"><b>Note</b></label>
+            <textarea id="notes" name="note" class="form-control form-control-lg" type="textarea"
+                placeholder="Your note goes here....." row="30" required></textarea>
         </div>
         <button class="btn btn-lg btn-info btn-block" type="submit">Add Note</button>
     </form>

@@ -1,0 +1,61 @@
+<%- include('partials/header.ejs') -%>
+
+<div id="noteView" class="card text-center mb-3 w-75">
+    <div class="card-header">
+        <h2><%= note.title %></h2>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title"><%= note.note %></h3>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">                    
+                <% for(let tag of note.tags){%>
+                <kbd><%= tag %>
+                    <form class=" btns text-danger" action="/tag_delete/<%= note.id %>" method="POST">
+                        <input type="hidden" value="<%= tag %>" name="tag" />
+                        <button type="submit"
+                            class="crss"><span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </form>
+                </kbd>
+                <% } %>
+            </li>
+        </ul>
+
+        <div id="imgCard" class="card-group">
+            <% for(let url of note.imgUrl){%>
+            <form  action="/deleteimg/<%= note.id %>" method="POST">
+                <input type="hidden" value="<%= url %>" name="url" />
+                <div class="card m-1">
+                    <img class="card-img-top" src="<%= url %>" alt="Card image cap">
+                    <div class="card-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="card-footer text-muted">
+        <a href="/edit/<%= note.id %>" class="btn btn-primary">
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>Edit Note</span>
+        </a>
+        <form class="btns" action="/delete/<%= note.id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger btn-sm a-btn-slide-text">
+                <big>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span>Delete Note</span>
+                </big>
+                
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') -%>

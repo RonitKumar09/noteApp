@@ -4,16 +4,37 @@
 
 ### made using Express, Mongoose and other dependencies like body-parser, connect-flash, etc
 
+### Ejs view engine, Bootstrap and Vanilla JavaScript
+
 ## Steps to Run this Project
 
 ### 1. Clone the Repo
 
-### 2. Connect to mongoDB database defining **_DATABASE_** varriable in **config.env**
+### 2. Connect to mongoDB database defining **_DATABASE_** varriable in**config.env**
 
 ### 3. Run Commands
 >
 > * npm install
 > * nodemon
+
+### V-1.0.1 updates
+>
+> * Added uploading image
+> * Separate page for viewing note
+> * Dark Mode in alfa
+> * Added more bugs to fix later 😉
+
+#### Viewing a Note
+>
+> ![list_of_notes](/demo_gifs/viewing_a_note.gif)
+
+#### Added Image Uploads
+>
+> ![list_of_notes](/demo_gifs/uploading_a_image.gif)
+
+#### Dark Mode Alfa
+>
+> ![list_of_notes](/demo_gifs/darkMode.gif)
 
 ## Preview
 
@@ -41,3 +62,5 @@
 >
 >![list_of_notes](/demo_gifs/deleting_a_tag.gif)
 >
+
+## [![Run on Repl.it](https://repl.it/badge/github/RonitKumar09/noteApp)](https://repl.it/github/RonitKumar09/noteApp)
