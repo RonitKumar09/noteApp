@@ -10,7 +10,7 @@
 
 ### 1. Clone the Repo
 
-### 2. Connect to mongoDB database defining **_DATABASE_** varriable in**config.env**
+### 2. Connect to mongoDB database defining **_DATABASE_** varriable in **config.env**
 
 ### 3. Run Commands
 >
