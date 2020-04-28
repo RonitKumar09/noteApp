@@ -2,7 +2,7 @@
 
 ## Simple NodeJS app to keep a record of __NOTES__ in mongoDB database
 
-### made using Express, Mongoose and other dependencies like body-parser, connect-flash, etc
+### made using Express, Mongoose, Multer and other dependencies like body-parser, connect-flash, etc
 
 ### Ejs view engine, Bootstrap and Vanilla JavaScript
 
