@@ -63,4 +63,6 @@
 >![list_of_notes](/demo_gifs/deleting_a_tag.gif)
 >
 
+# made with ❣️ by Ronit
+
 [![Run on Repl.it](https://repl.it/badge/github/RonitKumar09/noteApp)](https://repl.it/github/RonitKumar09/noteApp)
