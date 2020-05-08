@@ -49,7 +49,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const databaseUrl = process.env.DATABASE_LOCAL;
+const databaseUrl = process.env.DATABASE;
 
 mongoose.connect(databaseUrl, {
     useNewUrlParser: true,
