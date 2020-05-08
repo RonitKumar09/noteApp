@@ -2,7 +2,9 @@
 
 ## Simple NodeJS app to keep a record of __NOTES__ in mongoDB database
 
-### made using Express, Mongoose and other dependencies like body-parser, connect-flash, etc
+### made using Express, Mongoose and other dependencies like body-parser, multer, method-override, express-session, connect-flash, async etc
+
+### Authentication using Passport, Crypto and nodemailer
 
 ### Ejs view engine, Bootstrap and Vanilla JavaScript
 
@@ -10,12 +12,19 @@
 
 ### 1. Clone the Repo
 
-### 2. Connect to mongoDB database defining **_DATABASE_** varriable in**config.env**
+### 2. Connect to mongoDB database defining **_DATABASE_** varriable in **config.env**
 
 ### 3. Run Commands
 >
 > * npm install
 > * nodemon
+
+### V-1.0.2 updates
+>
+> * Added Authentication to use app
+> * Notes Panel still kept public
+> * Author name tails Title after Adding or Editing a note
+> * Functionality to Reset Password using email based authentication
 
 ### V-1.0.1 updates
 >

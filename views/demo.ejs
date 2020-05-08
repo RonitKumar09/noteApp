@@ -1,4 +1,58 @@
-<%- include('partials/header.ejs') -%>
-<h1>demo page</h1>
-<%- include('partials/footer.ejs') -%>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Notes</title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/tags.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/spinner.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/switch.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+
+
+    <script src="../js/tags.js"></script> 
+    <script src="../js/switch.js"></script>
+    <!-- <script src="../js/spinner.js"></script> -->
+    <!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script> -->
+
+</head>
+
+<body id="body" class="d-flex flex-column">
+<nav class="navbar navbar-expand-sm bg-light navbar-light shadow justify-content-end">
+    <a id="brand" href="/" class="navbar-brand navbar-left text-dark"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
+        <div id="nav" class="navbar-nav">
+                <a href="/add"class="btn btn-outline-secondary text-dark nav-item nav-link "> <span
+                        class="glyphicon glyphicon-plus"></span> add note</a>
+                <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link"><span
+                    class="glyphicon glyphicon-search"></span> search note</a>
+        </div>
+    <button class="btn-outline-dandger btn ml-auto mr-1">Always Show</button>
+    <div class="flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Right Link 1</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Right Link 2</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

@@ -9,21 +9,36 @@ const notesRoute = require('./routes/notes');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+const user = require('./models/users_db');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+// const fbStrategy = require('passport-facebook');
 
 
 dotenv.config({
     path: './config.env'
 });
+
 app.use(flash());
+
 app.use(session({
     secret : process.env.session_key,
     resave : true,
     saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy({usernameField:'email'},user.authenticate()));
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+
 //message varriables
 app.use((req, res, next)=>{
    res.locals.success_msg = req.flash(('success_msg'));
    res.locals.error_msg = req.flash(('error_msg'));
+   res.locals.error = req.flash(('error'));
+   res.locals.currentUser = req.user;
    next();
 });
 app.use(methodOverride('_method'));
@@ -34,7 +49,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const databaseUrl = process.env.DATABASE;
+const databaseUrl = process.env.DATABASE_LOCAL;
 
 mongoose.connect(databaseUrl, {
     useNewUrlParser: true,

@@ -6,3 +6,8 @@ else if(error_msg && error_msg!= '')
 { %>
     <div class="text-center alert alert-danger"><b><%= error_msg %></b></div>
 <% } %>
+
+<% if(error && error!= '')
+{ %>
+    <div class="text-center alert alert-danger"><b><%= error %></b></div>
+<% } %>

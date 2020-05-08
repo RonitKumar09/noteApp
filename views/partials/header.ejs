@@ -13,11 +13,15 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
     <!-- <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/tags.css">
     <link rel="stylesheet" type="text/css" href="../css/spinner.css">
     <link rel="stylesheet" type="text/css" href="../css/switch.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 
 
     <!-- <script src="../js/notes_table.js"></script> -->
@@ -32,18 +36,30 @@
 
 <body id="body" class="d-flex flex-column">
     <div id="loader" class="center"></div>
-        <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-light shadow">
-        <a id="brand" href="/" class="navbar-brand text-dark"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
+        <nav id="navbar" class="navbar navbar-expand-md w-100 navbar-light bg-light shadow">
+        <a id="brand" href="/home" class="navbar-brand text-dark"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
         <div id="nav" class="navbar-nav">
             <a href="/add"class="btn btn-outline-secondary text-dark nav-item nav-link "> <span
                     class="glyphicon glyphicon-plus"></span> add note</a>
-            <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link"><span
-                    class="glyphicon glyphicon-search"></span> search note</a>
+            <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link">
+                <span class="glyphicon glyphicon-search"></span> search note
+            </a>
         </div>
-        <div id="switch" class="navbar-nav float-right">
+        <div id="switch" class="navbar-nav ml-4 navbar-right mr-auto">
             <label class="switch">
                 <input id="darkmode" type="checkbox">
                 <span class="slider round"></span>
             </label>
         </div>
-    </nav>
+        <% if(currentUser){ %>
+        <div class="navbar-nav ml-auto " style="display: inline;">
+            
+            <a class="btn text-dark nav-item nav-link ">
+                <span class="glyphicon glyphicon-user"></span> <%= currentUser.name %>
+            </a>
+            <a class="btn btn-outline-info text-dark nav-item nav-link">
+                <span class="glyphicon glyphicon-cog"></span> change Password</a>
+            <a id="logout" href="/logout" class="btn btn-outline-danger text-dark mr-4 nav-item nav-link"> <strong><span class="glyphicon glyphicon-off"></span> Logout</strong></a>
+        </div>
+        <%}%>
+    </nav>   
