@@ -2,13 +2,9 @@
 
 ## Simple NodeJS app to keep a record of __NOTES__ in mongoDB database
 
-<<<<<<< HEAD
 ### made using Express, Mongoose and other dependencies like body-parser, multer, method-override, express-session, connect-flash, async etc
 
 ### Authentication using Passport, Crypto and nodemailer
-=======
-### made using Express, Mongoose, Multer and other dependencies like body-parser, connect-flash, etc
->>>>>>> 6bf1842d8296cf63439d6b5379550456b5cb972a
 
 ### Ejs view engine, Bootstrap and Vanilla JavaScript
 
