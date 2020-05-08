@@ -25,6 +25,7 @@
             <textarea id="notes" name="note" class="form-control form-control-lg" value="hello"
                 row="30"><%= notes.note %></textarea>
         </div>
+        <input name="author" type="text" value="<%= currentUser.name %>" hidden="hidden">
         <button hidden id="edit" class="btn btn-lg btn-info btn-block" type="submit">Edit Note</button>
     </div>
 </form>

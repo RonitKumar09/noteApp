@@ -14,12 +14,15 @@
             <% notes.forEach((note)=>{ %>
             <tr>
                 <td class="col-sm-2">
-                    <h3><%= note.title %></h3>
+                    <h3 class="mb-0"><%= note.title %></h3>
+                    <blockquote class="blockquote">
+                        <small class="blockquote-footer">
+                            <cite title="Source Title"><%=note.author%></cite>
+                    </small>
+                    </blockquote>     
                 </td>
                 <td class="text-center col-sm-5">
-                    <div id="demo" class="comment more">
-                        <%= note.note %>
-                    </div>
+                    <%= note.note %> 
                 </td>
                     <td class="text-center col-sm-3">
                     <div class="card-group">
@@ -29,7 +32,7 @@
                             <div class="card m-1" style="width: 6rem;">
                                 <img class="card-img-top" src="<%= url %>" alt="Card image cap">
                                 <div class="card-footer justify-content-center">
-                                    <button type="submit" class="btn crss text-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                    <button type="submit" class="btn crss text-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                                 </div>
                             </div>
                         </form>

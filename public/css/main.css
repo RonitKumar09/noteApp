@@ -68,11 +68,6 @@ footer{
 	border-top: 1px whitesmoke;
 }
 
-nav{
-	position: absolute;
-	top: 0;
-	left: 0;
-}
 
 #switch{
 	float: right;

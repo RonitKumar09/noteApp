@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') -%>
+<%- include('partials/messages.ejs') -%>
+
+<div id="log" class="wrapper fadeInDown">
+  <div id="formContent">
+    
+
+    
+    <div class="fadeIn first">
+      <img src="./favicon/login-icon.png" id="icon" alt="User Icon" />
+    </div>
+
+   
+    <form method="POST" action="/signup"> 
+      <input type="text" class="fadeIn second" name="user_id" placeholder="username">
+      <input type="email" id="login" class="fadeIn second" name="email" placeholder="Email" required>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Register">
+    </form>
+
+    
+    <div id="formFooter">
+      <a class="underlineHover" href="/login">LogIn instead?</a>
+    </div>
+
+  </div>
+</div>
+<%- include('partials/footer.ejs') -%>
+

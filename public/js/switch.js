@@ -49,7 +49,6 @@ if(localStorage.getItem("darkmode") == "on"){
     }
 
 
-function edit(event){
-        console.log(event + 'event');
+function edit(){
         editbtn.click();
     }
