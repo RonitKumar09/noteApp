@@ -9,7 +9,7 @@
     "datatables.net-dt": "^1.10.20",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.1",
     "fs": "^0.0.1-security",
     "jquery": "^3.5.0",
