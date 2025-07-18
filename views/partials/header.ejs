@@ -39,11 +39,13 @@
         <nav id="navbar" class="navbar navbar-expand-md w-100 navbar-light bg-light shadow">
         <a id="brand" href="/home" class="navbar-brand text-dark"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
         <div id="nav" class="navbar-nav">
-            <a href="/add"class="btn btn-outline-secondary text-dark nav-item nav-link "> <span
-                    class="glyphicon glyphicon-plus"></span> add note</a>
-            <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link">
-                <span class="glyphicon glyphicon-search"></span> search note
-            </a>
+            <% if (currentUser) { %>
+                <a href="/add" class="btn btn-outline-secondary text-dark nav-item nav-link "> <span
+                        class="glyphicon glyphicon-plus"></span> add note</a>
+                <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link">
+                    <span class="glyphicon glyphicon-search"></span> search note
+                </a>
+            <% } %>
         </div>
         <div id="switch" class="navbar-nav ml-4 navbar-right mr-auto">
             <label class="switch">
