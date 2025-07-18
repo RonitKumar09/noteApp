@@ -17,6 +17,7 @@ const authRoute = require('./src/routes/auth');
 const pagesRoute = require('./src/routes/pages');
 
 app.use(flash());
+
 app.use(session({
     secret: process.env.SESSION_KEY,
     resave: true,
