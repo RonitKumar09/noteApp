@@ -61,7 +61,7 @@ module.exports = {
                 url.push(file.path.replace('public', ''));
             });
         }
-        let arr = req.body.tags.trim().split(",");
+        let arr = req.body.tags.trim().split(",").map(t => t.trim()).filter(t => t.length > 0);
         arr = Array.from(new Set(arr));
         let newNote = {
             title: req.body.title,
@@ -83,7 +83,7 @@ module.exports = {
         let url = [];
         let author = req.body.author;
         const files = req.files;
-        let arr = req.body.tags.trim().split(",");
+        let arr = req.body.tags.trim().split(",").map(t => t.trim()).filter(t => t.length > 0);
         arr = Array.from(new Set(arr));
         let SearchQuery = { _id: req.params.id };
         if (files) {
@@ -124,10 +124,10 @@ module.exports = {
         let tag = req.body.tag;
         try {
             await Note.updateOne(SearchQuery, { $pull: { tags: tag } });
-            res.redirect('back');
+            res.redirect('/home'); // Redirect to home to refresh table
         } catch (err) {
             req.flash('error_msg', 'ERROR: ' + err);
-            res.redirect('back');
+            res.redirect('/home');
         }
     },
     deleteImage: async (req, res) => {
