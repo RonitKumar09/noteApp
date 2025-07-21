@@ -1,8 +1,66 @@
-body{
+/* Custom remove image button for file selection */
+.remove-img {
+  display: inline-block;
+  margin-left: 0.5em;
+  background: var(--btn-bg, #56baed);
+  color: var(--btn-text, #fff);
+  border: none;
+  border-radius: 50%;
+  width: 1.7em;
+  height: 1.7em;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.remove-img:hover {
+  background: var(--btn-hover, #39ace7);
+  color: var(--btn-text, #fff);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+body {
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
 	padding-bottom: 5rem;
+	background: var(--bg, #fff);
+	color: var(--text, #222);
+	transition: background 0.3s, color 0.3s;
+}
+
+:root {
+	--bg: #fff;
+	--text: #222;
+	--card-bg: #fff;
+	--card-border: #e0e0e0;
+	--input-bg: #f6f6f6;
+	--input-text: #0d0d0d;
+	--btn-bg: #56baed;
+	--btn-hover: #39ace7;
+	--btn-text: #fff;
+	--tag-bg: #2196F3;
+	--tag-text: #fff;
+	--footer-bg: #222;
+	--footer-text: #aaa;
+}
+
+.dark-mode {
+   --bg: #181a1b;
+   --text: #f5f6fa;
+   --card-bg: #23272b;
+   --card-border: #444c56;
+   --input-bg: #23272b;
+   --input-text: #f5f6fa;
+   --btn-bg: #4f8cff;
+   --btn-hover: #2563a6;
+   --btn-text: #fff;
+   --tag-bg: #2d8cf0;
+   --tag-text: #ffd265;
+   --footer-bg: #181a1b;
+   --footer-text: #b0b0b0;
 }
 
 .black-bg{
@@ -47,7 +105,7 @@ thead {
 #img-text{
 	margin-left: 10px;
 	font-family: sans-serif;
-	color: #aaa;
+	color: var(--text, #aaa);
 	display: inline;
 }
 
@@ -58,14 +116,16 @@ thead {
 	height: 10px;
 }
 
-footer{
+footer {
 	flex-direction: column;
 	align-items: flex-end;
 	bottom: 0;
 	position: fixed;
 	width: 100%;
 	height: 5rem;
-	border-top: 1px whitesmoke;
+	border-top: 1px solid var(--card-border);
+	background: var(--footer-bg);
+	color: var(--footer-text);
 }
 
 

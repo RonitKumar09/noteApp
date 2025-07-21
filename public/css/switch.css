@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--card-border, #ccc);
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -40,7 +40,7 @@
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--tag-bg, #2196F3);
   }
   
   input:focus + .slider {
@@ -62,7 +62,15 @@
     border-radius: 50%;
   }
 
-  .nav-btn{
-    background-color:#ffd265;
-    border-radius: 3px ;
-  }
+.nav-btn {
+    background-color: #fff3cd;
+    border-radius: 5px;
+    color: #856404;
+    border: 1px solid #ffe082;
+    transition: background 0.2s, border-radius 0.2s;
+}
+.nav-btn:hover, .nav-btn:focus {
+    background-color: #fff8e1;
+    border-radius: 5px;
+    color: #856404;
+}

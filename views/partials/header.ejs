@@ -24,12 +24,13 @@
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 
 
+
     <!-- <script src="../js/notes_table.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../js/tags.js"></script>
     <script src="../js/switch.js"></script>
     <script src="../js/spinner.js"></script>
     <!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script> -->
 
 </head>
@@ -37,12 +38,12 @@
 <body id="body" class="d-flex flex-column">
     <div id="loader" class="center"></div>
         <nav id="navbar" class="navbar navbar-expand-md w-100 navbar-light bg-light shadow">
-        <a id="brand" href="/home" class="navbar-brand text-dark"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
+        <a id="brand" href="/home" class="navbar-brand"> <strong> <span class="glyphicon glyphicon glyphicon-pencil"></span> Note App</strong></a>
         <div id="nav" class="navbar-nav">
             <% if (currentUser) { %>
-                <a href="/add" class="btn btn-outline-secondary text-dark nav-item nav-link "> <span
+                <a href="/add" class="btn btn-outline-secondary nav-item nav-link"> <span
                         class="glyphicon glyphicon-plus"></span> add note</a>
-                <a href="/search" class="btn text-dark ml-2 btn-outline-secondary nav-item nav-link">
+                <a href="/search" class="btn ml-2 btn-outline-secondary nav-item nav-link">
                     <span class="glyphicon glyphicon-search"></span> search note
                 </a>
             <% } %>
@@ -55,13 +56,12 @@
         </div>
         <% if(currentUser){ %>
         <div class="navbar-nav ml-auto " style="display: inline;">
-            
-            <a class="btn text-dark nav-item nav-link ">
+            <a class="btn nav-item nav-link ">
                 <span class="glyphicon glyphicon-user"></span> <%= currentUser.name %>
             </a>
-            <a class="btn btn-outline-info text-dark nav-item nav-link">
+            <a class="btn btn-outline-info nav-item nav-link">
                 <span class="glyphicon glyphicon-cog"></span> change Password</a>
-            <a id="logout" href="/logout" class="btn btn-outline-danger text-dark mr-4 nav-item nav-link"> <strong><span class="glyphicon glyphicon-off"></span> Logout</strong></a>
+            <a id="logout" href="/logout" class="btn btn-outline-danger mr-4 nav-item nav-link"> <strong><span class="glyphicon glyphicon-off"></span> Logout</strong></a>
         </div>
         <%}%>
     </nav>   
