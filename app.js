@@ -45,8 +45,7 @@ app.set('view engine', 'ejs');
 const databaseUrl = process.env.DATABASE;
 mongoose.connect(databaseUrl, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    useUnifiedTopology: true
 }).then(() => {
     console.log('MongoDB connected');
 }).catch(err => {

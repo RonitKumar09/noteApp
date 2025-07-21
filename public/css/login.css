@@ -32,10 +32,10 @@
     padding: 20px;
   }
   
-  #formContent {
+#formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #fff;
+    background: var(--card-bg, #fff);
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -44,38 +44,42 @@
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
-  }
+    color: var(--text, #222);
+}
   
-  #formFooter {
-    background-color: #f6f6f6;
-    border-top: 1px solid #dce8f1;
+#formFooter {
+    background-color: var(--input-bg, #f6f6f6);
+    border-top: 1px solid var(--card-border, #dce8f1);
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
-  }
+    color: var(--input-text, #e0e0e0);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+}
   
   
   
   /* TABS */
   
- #log h2.inactive {
-    color: #cccccc;
+#log h2.inactive {
+    color: var(--text, #cccccc);
   }
   
- #log h2.active {
-    color: #0d0d0d;
-    border-bottom: 2px solid #5fbae9;
+#log h2.active {
+    color: var(--text, #0d0d0d);
+    border-bottom: 2px solid var(--btn-bg, #5fbae9);
   }
   
   
   
   /* FORM TYPOGRAPHY*/
   
- #log input[type=button], input[type=submit], input[type=reset]  {
-    background-color: #56baed;
+#log input[type=button], input[type=submit], input[type=reset]  {
+    background-color: var(--btn-bg, #56baed);
     border: none;
-    color: white;
+    color: var(--btn-text, #fff);
     padding: 15px 80px;
     text-align: center;
     text-decoration: none;
@@ -92,11 +96,11 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-  }
+}
   
- #log input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-    background-color: #39ace7;
-  }
+#log input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+    background-color: var(--btn-hover, #39ace7);
+}
   
  #log input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
     -moz-transform: scale(0.95);
@@ -106,10 +110,10 @@
     transform: scale(0.95);
   }
   
- #log input[type=email],  #log input[type=password],  #log input[type=text] {
-    background-color: #f6f6f6;
+  #log input[type=email],  #log input[type=password],  #log input[type=text] {
+    background-color: var(--input-bg, #f6f6f6);
     border: none;
-    color: #0d0d0d;
+    color: var(--input-text, #0d0d0d);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -117,7 +121,7 @@
     font-size: 16px;
     margin: 5px;
     width: 85%;
-    border: 2px solid #f6f6f6;
+    border: 1.5px solid var(--card-border, #e0e0e0);
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -128,8 +132,10 @@
   }
   
  #log input[type=email]:focus,  #log input[type=password]:focus,  #log input[type=text]:focus {
-    background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
+    background-color: var(--input-bg, #23272b);
+    color: var(--input-text, #f5f6fa);
+    border: 1.5px solid var(--btn-bg, #4f8cff);
+    box-shadow: 0 0 0 2px var(--btn-bg, #4f8cff33);
   }
   
  #log input[type=email]:placeholder,  #log input[type=password]:placeholder,  #log input[type=text]:placeholder {
