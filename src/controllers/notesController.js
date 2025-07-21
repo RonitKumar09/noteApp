@@ -136,8 +136,12 @@ module.exports = {
         try {
             fs.unlinkSync('./public/' + url);
         } catch (err) {
-            req.flash('error_msg', 'ERROR: ' + err);
-            return res.redirect('back');
+            // Suppress ENOENT (file not found) errors
+            if (err.code !== 'ENOENT') {
+                req.flash('error_msg', 'ERROR: ' + err);
+                return res.redirect('back');
+            }
+            // else, file already gone, continue
         }
         try {
             await Note.updateOne(SearchQuery, { $pull: { imgUrl: url } });
