@@ -21,9 +21,14 @@ module.exports = {
         });
     },
     logout: (req, res) => {
-        req.logOut();
-        req.flash('success_msg', 'Logged Out Successfully!!');
-        res.redirect('/login');
+        req.logout(function(err) {
+            if (err) {
+                req.flash('error_msg', 'Logout failed: ' + err);
+                return res.redirect('/home');
+            }
+            req.flash('success_msg', 'Logged Out Successfully!!');
+            res.redirect('/login');
+        });
     },
     getForgot: (req, res) => res.render('forgot'),
     postForgot: (req, res, next) => {
